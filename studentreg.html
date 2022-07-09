@@ -1,0 +1,114 @@
+
+<!DOCTYPE html>
+<html lang="en"xmlns:th="http:/www.thymleaf.org">
+<head>
+	<link rel="stylesheet"   href="css/bootstrap.css">
+
+<link rel="stylesheet"   href="css/bootstrap.css.map">
+
+<link rel="stylesheet"   href="css/bootstrap.min.css">
+
+<link rel="stylesheet"   href="css/bootstrap.min.css.map">
+
+<link href="bootstrap.css" rel="stylesheet" type="text/css"/>
+        <link href="bootstrap/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+        <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+        <link href="bootstrap/style.css" rel="stylesheet" type="text/css"/>
+        
+       
+       
+              
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script> 
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+  <title></title>
+</head>
+<style>
+    
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+</style>
+
+
+<body style=" height: 150vh; display: flex; align-items: center;justify-content: center; background-color:rgb(192, 192, 192)";>
+	<div class="container"style="position: relative; max-width: 800px; width: 100%; background: #fff;border-radius: 10px;box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1); overflow: hidden;
+    margin: 0 20px;" > 
+        <div style=" color:rgb(64, 0, 64); text-decoration: none;" class="form l">
+<b style=" font-size: 27px; font-weight: 600; margin-left:200px; margin-top:50px;"class="title">FOMU YA USAJILI WA MASOMO</b>
+  <form action ="#" th:action="@{/studentaddNew}" th:objet ="${student}"  method="POST">
+  <div class="form-group">
+  <label  for="name" class="form-label"><b>Jina la kwanza</b></label>
+  <input  type="text" class="form-control" name="first_name" placeholder="ingiza jina lako"required>
+   </div>
+   <div class="form-group">
+  <label  for="name" class="form-label"><b>Jina la Pili</b></label>
+  <input  type="text" class="form-control" name="middle_name" placeholder="ingiza jina la Baba"required >
+   </div>
+   <div class="form-group">
+  <label  for="name" class="form-label"><b>Jina la Tatu</b></label>
+  <input  type="text" class="form-control" name="lastt_name" placeholder="ingiza jina a babu"required>
+   </div>
+    <div class="form-group">
+  <label   for="password" class="form-label">Anuani</label>
+     <input    type="text" class="form-control" name="address" placeholder="ingiza mahala unapoishi"required >
+  </div>
+ <div class="form-group">
+  <label   for="password" class="form-label">Umri</label>
+     <input    type="number" class="form-control" name="age" placeholder="ingiza miaka " required>
+  </div>
+  <div class="form-group">
+  <label   for="password" class="form-label">Jinsia</label>
+     <input    type="text" class="form-control" name="gender" placeholder="ingiza Jinsia " required>
+  </div>
+
+   <div class="form-group">
+  <label   for="password" class="form-label">Darasa unalosoma</label>
+     <input    type="number" class="form-control" name="grade" placeholder="ingiza darasa lako"required >
+  </div>
+    
+  <div class="form-group">
+  <label   for="password" class="form-label">Jina la Mzaza</label>
+     <input type="text" class="form-control" name="parent_name" placeholder="ingiza Jina la mzazi "required >
+  </div>
+ 
+ <div class="form-group"> 
+ <label for="Phone">Nambari ya simu</label>
+ <input type="number" style="color: black;margin-left: 30px; width:400px"  class="form-control"  name ="phone_number" id="" placeholder="Ingiza nambari ya simu"required>
+ 	</div>
+ <div class="form-group"> 
+ <label  for="email"style="color: black;margin-left: 30px;">Barua pepe</label>
+  <input style="color: black;margin-left: 30px;width:400px"type="email" class="form-control" name ="email" id="email" placeholder="Ingiza Barua pepe"required>
+</div>
+<div class="form-group"> 
+ 
+  <input type="hidden" class="form-control" value="Student" name ="role" id="role">
+</div>
+<div class="form-group">
+					  <label for="email" >User Name</label>
+					  <input  style="width: 40%;"  type= "text" class="form-control" name ="username"required>
+					</div>
+					<div class="form-group">
+					  <label for="Password1">Password</label>
+					  <input style="width: 40%;" type="password" class="form-control"  name="password"required>
+					</div>
+
+
+
+					 <button type="submit" class="btn btn-primary btn-md" style="margin-left: 390px;">Register</button>
+					 <br>
+					 <br>
+
+</form>
+  </div>
+		</div>
+		
+		</body>
+</html>

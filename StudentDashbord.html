@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en"xmlns:th="http:/www.thymleaf.org">
+<head>
+	<link rel="stylesheet"   href="/css/bootstrap.css">
+
+<link rel="stylesheet"   href="/css/bootstrap.css.map">
+
+<link rel="stylesheet"   href="/css/bootstrap.min.css">
+
+<link rel="stylesheet"   href="/css/bootstrap.min.css.map">
+
+<link href="bootstrap.css" rel="stylesheet" type="text/css"/>
+        <link href="bootstrap/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+        <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+        <link href="bootstrap/style.css" rel="stylesheet" type="text/css"/>
+        
+        <link rel="stylesheet" type="text/css" href="style.css"/>
+       
+              
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script> 
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+  <title></title>
+</head>
+<body>
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+  <!-- Brand/logo -->
+  <a class="navbar-brand" href="#">
+    DYSLEXIA READING AND WRITING
+  </a>
+  
+  <!-- Links -->
+  <ul class="navbar-nav" th:object="${student}">
+    <li class="nav-item" style="margin-left: 900px;">
+      <a class="nav-link" th:href="@{/students}">Home</a>
+    </li>
+     <li class="nav-item" >
+      <a class="nav-link" th:href="@{/ist1/(id=*{id})}">Lesson</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link"  th:href="@{/a}">Accomplishment</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link"  th:href="@{/lindex1}">logout</a>
+    </li>
+  </ul>
+</nav>
+<div class="cointainer" style= "margin-left:50px; margin-top:50px; width:90%;">
+<button class="btn btn-primary" style="float: right" onclick="printDiv()">print result</button></h5><br><br>
+  <div class="card-columns" >
+  
+    <div class="card bg-white">
+      <div class="card-body text-center">
+         <h5>TOPICS</h5>
+         <table class="table  table-sm">
+    <tbody>
+        <tr th:each="category,iterator:${ourcategory}">
+        	<td th:text="${category.categoryname}"></td>
+        	</tr>
+    </tbody>
+         </table>
+      </div>
+    </div>
+    
+    <div id="print">
+    <div class="card bg-white">
+      <div class="card-body text-center">
+         <h5>STUDENTS RESULT</h5>
+         
+         <table class="table  table-sm">
+    <tbody>
+        <tr th:each="category,iterator:${sture}">
+        	<td th:text="${category.subCategory.subcategory_name}"></td>
+        	<td th:text="${category.result}"></td>
+        	</tr>
+    </tbody>
+         </table>
+      </div>
+    </div>
+    
+    <div class="card bg-white" >
+      <div class="card-body text-center">
+         <h5>STUDENTS INFORMATION</h5>
+         <table class="table  table-sm">
+    <tbody>
+        <tr>
+        	<td>name</td>
+        	<td th:text="${student.first_name +' ' +student.middle_name + ' '+lastt_name}"></td>
+        </tr>
+        <tr>
+        	<td>Grade Level</td>
+        	<td th:text="${student.grade}"></td>
+        </tr>
+        <tr>
+        	<td>Gender</td>
+        	<td th:text="${student.user.gender}"></td>
+        </tr>
+    </tbody>
+         </table>
+      </div>
+    </div>
+    </div>
+  </div>
+</div>
+
+</div>
+
+<script>
+        function printDiv() {
+            var divContents = document.getElementById("print").innerHTML;
+            var a = window.open('', '', 'height=500, width=500');
+            a.document.write('<html>');
+            a.document.write('<body > <h2> Student result </h2> <br>');
+            a.document.write(divContents);
+            a.document.write('</body></html>');
+            a.document.close();
+            a.print();
+        }
+    </script>
+</body>
+
+</html>

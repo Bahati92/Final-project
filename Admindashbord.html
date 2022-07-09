@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<link rel="stylesheet"   href="css/bootstrap.css">
+
+<link rel="stylesheet"   href="css/bootstrap.css.map">
+
+<link rel="stylesheet"   href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="/css/sidebarStyle.css">
+
+<link rel="stylesheet"   href="css/bootstrap.min.css.map">
+<link rel="stylesheet"   href="bootstrap/js/bootstrap.min.js">
+<link rel="stylesheet" type="text/css" href="style.css"/>
+
+<link rel="stylesheet"   href="bootstrap/js/jquery-1.10.2.js">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+<title>dashbors</title>
+</head>
+<body>
+<div th:replace="fragment/sidebar :: sidebar"></div>
+<div class="content">
+<div class="card-columns" style="margin-top: 30px;" >
+    <div class="card bg-white">
+      <div class="card-body text-center">
+         <h5></h5>
+         <table class="table  table-sm">
+    <tbody>
+        <tr th:each="category,iterator:${ourcategory}">
+        	<td th:text="${category.categoryname}"></td></tr>
+    </tbody>
+         </table>
+      </div>
+    </div>
+    <div class="card bg-white">
+      <div class="card-body text-center">
+         <h5>STUDENTS RESULT</h5>
+         <table class="table  table-sm">
+    <tbody>
+        <tr th:each="category,iterator:${sture}">
+        	<td th:text="${category.result}"></td></tr>
+    </tbody>
+         </table>
+      </div>
+    </div>
+     <div class="card bg-white">
+      <div class="card-body text-center">
+         <h5>STUDENTS INFORMATION</h5>
+         <table class="table  table-sm">
+    <tbody>
+        <tr th:each="category,iterator:${sture}">
+        	<td th:text="${category.result}"></td></tr>
+    </tbody>
+         </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+</div>
+
+</body>
+
+</html>
+
+

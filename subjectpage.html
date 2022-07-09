@@ -1,0 +1,88 @@
+<!Docktype html>
+<html xmlns:th="http://www.thymeleaf.org">
+<html>
+<head>
+  <title></title>
+<link rel="stylesheet"   href="css/bootstrap.css">
+
+<link rel="stylesheet"   href="css/bootstrap.css.map">
+
+<link rel="stylesheet"   href="css/bootstrap.min.css">
+
+<link rel="stylesheet"   href="css/bootstrap.min.css.map">
+<script src="js/jquiry.js"></script>
+ <script src="js/j2.js"></script>
+<link rel="stylesheet"   href="bootstrap/js/bootstrap.min.js">
+<link rel="stylesheet" type="text/css" href="style.css"/>
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+ 
+  <link rel="stylesheet" href="/css/sidebarStyle.css">
+</head>
+<body> 
+<div th:replace="fragment/sidebar :: sidebar"></div>
+<div class="content">
+    <h2>SUBJECT</h2>
+    <p> <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">Add Subject</button></p>
+    <table class="table table-bordered table-sm">
+      <thead>
+        <tr>
+          <th>Subject Id</th>
+          <th>Subject Name</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr th:each="subject,iterator:${oursubj}">
+        	<td th:text="${subject.id}"></td>
+        	<td th:text="${subject.subjectname}"></td>
+        	<td><a th:href ="@{/updatesubject/{id}(id=${subject.id})}" style="margin-left: 30px;"  type="button" class="btn btn-primary">Update</button>
+              
+       
+               <a th:href="@{/deletesubject/(id=${subject.id})}" class="btn btn-danger">Delete</a>
+               
+              </td>
+        </tr>    
+      </tbody>
+    </table>
+  </div>
+  
+ <!-- The Modal -->
+<div class="modal" id="myModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h4 class="modal-title">ADD SUBJECT</h4>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal-body">
+        <form th:action="@{/addSubject}"  method="POST" > 
+     
+                      <div class="form-group">
+					  <label for="name" style="color: black">SubjectName</label>
+					  <input type="text" class="form-control" id="subjectname"  name="subjectname" placeholder="insrt subject name"required >
+					  
+					</div>
+					
+			
+					
+					
+					<center><button   type="submit" class="btn btn-primary btn-lg"><center>Save SUBJECT</center></button></center>
+					
+				  </form>
+      </div>
+
+    </div>
+  </div>
+</div>      
+     
+</body>
+</html>
